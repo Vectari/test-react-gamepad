@@ -1,10 +1,12 @@
-import { Gamepad } from "@/GamepadAPI/GamepadAPI"
+import { Gamepad } from "@/GamepadAPI/GamepadAPI";
 
 export default function Home() {
   return (
     <>
       <h1 className="p-24">Hello world</h1>
-      <Gamepad />
+      <div className="p-24">
+        <Gamepad />
+      </div>
     </>
-  )
+  );
 }
