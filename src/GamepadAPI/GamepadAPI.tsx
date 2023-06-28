@@ -34,6 +34,7 @@ export function Gamepad() {
   const [sharePressed, setSHAREPressed] = useState(false);
   const [optionsPressed, setOPTIONSPressed] = useState(false);
   const [connectionStatus, setConnectionStatus] = useState(false);
+  const [gamepadName, setGamepadName] = useState("");
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -60,6 +61,7 @@ export function Gamepad() {
         setSHAREPressed(controller.buttons[8].pressed);
         setOPTIONSPressed(controller.buttons[9].pressed);
         setConnectionStatus(controller.connected);
+        setGamepadName(controller.id)
       }
     }, 1);
   }, []);
@@ -68,7 +70,7 @@ export function Gamepad() {
     <>
       <div>
         STATUS:{" "}
-        {connectionStatus ? "OK" : "Gamepad not connected. Press any button..."}
+        {connectionStatus ? `OK - ${gamepadName}` : "Gamepad not connected. Press any button..."}
       </div>
       {/* <button onClick={vibration()}>VIBRATION</button> */}
       <div>LeftX {leftX}</div>
