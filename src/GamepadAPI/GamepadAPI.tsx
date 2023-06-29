@@ -61,7 +61,7 @@ export function Gamepad() {
         setSHAREPressed(controller.buttons[8].pressed);
         setOPTIONSPressed(controller.buttons[9].pressed);
         setConnectionStatus(controller.connected);
-        setGamepadName(controller.id)
+        setGamepadName(controller.id);
       }
     }, 1);
   }, []);
@@ -70,7 +70,9 @@ export function Gamepad() {
     <>
       <div>
         STATUS:{" "}
-        {connectionStatus ? `OK - ${gamepadName}` : "Gamepad not connected. Press any button..."}
+        {connectionStatus
+          ? `OK - ${gamepadName}`
+          : "Gamepad not connected. Press any button..."}
       </div>
       {/* <button onClick={vibration()}>VIBRATION</button> */}
       <div>LeftX {leftX}</div>
@@ -83,10 +85,58 @@ export function Gamepad() {
       <div>RT {rt}</div>
       <div>LB{lbPressed && " OK"}</div>
       <div>RB{rbPressed && " OK"}</div>
-      <div>A{aPressed && " OK"}</div>
-      <div>B{bPressed && " OK"}</div>
-      <div>X{xPressed && " OK"}</div>
-      <div>Y{yPressed && " OK"}</div>
+      <div>
+        A{aPressed && " OK"}
+        <svg width="40" height="40">
+          <circle
+            cx="20"
+            cy="20"
+            r="15"
+            stroke="pink"
+            stroke-width="4"
+            fill={aPressed ? "yellow" : "blue"}
+          />
+        </svg>
+      </div>
+      <div>
+        B{bPressed && " OK"}
+        <svg width="40" height="40">
+          <circle
+            cx="20"
+            cy="20"
+            r="15"
+            stroke="pink"
+            stroke-width="4"
+            fill={bPressed ? "yellow" : "blue"}
+          />
+        </svg>
+      </div>
+      <div>
+        X{xPressed && " OK"}
+        <svg width="40" height="40">
+          <circle
+            cx="20"
+            cy="20"
+            r="15"
+            stroke="pink"
+            stroke-width="4"
+            fill={xPressed ? "yellow" : "blue"}
+          />
+        </svg>
+      </div>
+      <div>
+        Y{yPressed && " OK"}
+        <svg width="40" height="40">
+          <circle
+            cx="20"
+            cy="20"
+            r="15"
+            stroke="pink"
+            stroke-width="4"
+            fill={yPressed ? "yellow" : "blue"}
+          />
+        </svg>
+      </div>
       <div>UP{upPressed && " OK"}</div>
       <div>DOWN{downPressed && " OK"}</div>
       <div>LEFT{leftPressed && " OK"}</div>
