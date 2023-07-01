@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 
-export function Axes() {
+export function AxesSVG() {
   const [leftX, setLeftX] = useState(0);
   const [leftY, setLeftY] = useState(0);
   const [rightX, setRightX] = useState(0);
@@ -24,7 +24,7 @@ export function Axes() {
   }, []);
 
   return (
-    <div>
+    <>
       <svg height="157" width="335">
         <g transform="translate(78.5 78.5) scale(0.95, 0.95)">
           <circle
@@ -107,6 +107,6 @@ export function Axes() {
           ></circle>
         </g>
       </svg>
-    </div>
+    </>
   );
 }

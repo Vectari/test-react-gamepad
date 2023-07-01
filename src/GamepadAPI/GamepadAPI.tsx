@@ -94,7 +94,7 @@ export function Gamepad() {
             r="15"
             stroke="pink"
             stroke-width="4"
-            fill={aPressed ? "yellow" : "blue"}
+            fill={aPressed ? "yellow" : "none"}
           />
         </svg>
       </div>
@@ -107,7 +107,7 @@ export function Gamepad() {
             r="15"
             stroke="pink"
             stroke-width="4"
-            fill={bPressed ? "yellow" : "blue"}
+            fill={bPressed ? "yellow" : "none"}
           />
         </svg>
       </div>
@@ -120,7 +120,7 @@ export function Gamepad() {
             r="15"
             stroke="pink"
             stroke-width="4"
-            fill={xPressed ? "yellow" : "blue"}
+            fill={xPressed ? "yellow" : "none"}
           />
         </svg>
       </div>
@@ -133,7 +133,7 @@ export function Gamepad() {
             r="15"
             stroke="pink"
             stroke-width="4"
-            fill={yPressed ? "yellow" : "blue"}
+            fill={yPressed ? "yellow" : "none"}
           />
         </svg>
       </div>
